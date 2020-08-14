@@ -9,75 +9,14 @@ Please fill out:
 * Blog post URL: 
 
 
-
-```python
-# Your code here - remember to use markdown cells for comments as well!
-```
-
-
-
-
-    '/Users/juhyunlee/Documents/GitHub/dsc-mod-1-project-v2-1-onl01-dtsc-ft-070620'
-
-
-
 # Introduction to the Project
 
 ## Introduction
 Over the century, the film industry have been exponentially growing not only in the developed countries, but also developing countries as well making.
 
+<img src='images/intro1.png'>
 
-```python
-# seaborn style settings
-fig, ax = plt.subplots(figsize=(12,8))
-sns.set_style("whitegrid")
-sns.distplot(df_movie_budgets['year'], ax=ax, 
-             color='b',
-             kde_kws={'color':'r'});
-ax.set(xlabel='Year', ylabel='Fraction', 
-       title=f'Fraction of Films by Released Years (n={len(df_movie_budgets)})');
-```
-
-
-![png](output_4_0.png)
-
-
-
-```python
-# seaborn style settings
-fig, ax = plt.subplots(figsize=(12,8))
-sns.set_style("whitegrid")
-sns.lineplot(x='year', 
-             y='production_budget',
-             data=group_budgets,)
-sns.lineplot(x='year', 
-             y='domestic_gross',
-             color='g',
-             data=group_budgets)
-sns.lineplot(x='year', 
-             y='worldwide_gross',
-             color='r',
-             data=group_budgets)
-ylabels = ['{:,.2f}'.format(x) + 'B' for x in ax.get_yticks()/1000000000];
-ax.set_yticklabels(ylabels);
-ax.set(title='Total production budgets and their returns',
-       xlabel='Year',
-       ylabel='Total Money Involved ($)');
-
-ax.legend(loc='upper left', labels=['Total Production Budget', 'Domestic Gross', 'Worldwide Gross'])
-# source code: https://stackoverflow.com/questions/45201514/edit-seaborn-legend/45211976
-```
-
-
-
-
-    <matplotlib.legend.Legend at 0x1a4535a6d8>
-
-
-
-
-![png](output_5_1.png)
-
+<img src='images/intro2.png'>
 
 ## Problem Statement
 Microsoft sees all the big companies creating original video content, and they want to get in on the fun. They have decided to create a new movie studio, but the problem is they don’t know anything about creating movies. They have hired you to help them better understand the movie industry. Your team is charged with doing data analysis and creating a presentation that explores what ```type of films are currently doing the best at the box office```. You must then translate those findings into actionable insights that the CEO can use when deciding what type of films they should be creating.
@@ -288,7 +227,7 @@ ax.set(xlabel='Year', ylabel='Fraction',
 ```
 
 
-![png](output_32_0.png)
+![png](output_31_0.png)
 
 
 
@@ -325,7 +264,7 @@ ax.legend(loc='upper left', labels=['Total Production Budget', 'Domestic Gross',
 
 
 
-![png](output_33_1.png)
+![png](output_32_1.png)
 
 
 ### Cleaning Data - Budget
@@ -400,7 +339,7 @@ ax = sns.distplot(df_movie_budgets['production_budget'], )
 ```
 
 
-![png](output_39_0.png)
+![png](output_38_0.png)
 
 
 
@@ -448,11 +387,11 @@ plt.close(fig2.fig)
 ```
 
 
-![png](output_43_0.png)
+![png](output_42_0.png)
 
 
 
-![png](output_43_1.png)
+![png](output_42_1.png)
 
 
 
@@ -473,7 +412,7 @@ ax.set(title = 'Production Budget Over Time', ylabel='Production Budget ($)');
 ```
 
 
-![png](output_44_0.png)
+![png](output_43_0.png)
 
 
 
@@ -532,7 +471,7 @@ for level in ['Mega', 'Big', 'Medium', 'Low', 'Ultra Low']:
 ```
 
 
-![png](output_47_0.png)
+![png](output_46_0.png)
 
 
 
@@ -574,7 +513,7 @@ ax.set(title='Mean worldwide wross in Millions');
 ```
 
 
-![png](output_51_0.png)
+![png](output_50_0.png)
 
 
 
@@ -603,7 +542,7 @@ ax.set(title=f'Mean domestic gross profit in Millions (n={count.iloc[0,0]})');
 ```
 
 
-![png](output_53_0.png)
+![png](output_52_0.png)
 
 
 
@@ -852,7 +791,7 @@ ax.set_xticklabels( ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Se
 ```
 
 
-![png](output_57_0.png)
+![png](output_56_0.png)
 
 
 ### Cleaning Data - Crew, titles, and budgets using SQLite3 and Pandas
@@ -1720,15 +1659,15 @@ ax3 = bar_graph(data=df_directors_top, focus='directors', hue='ROI')
 ```
 
 
-![png](output_76_0.png)
+![png](output_75_0.png)
 
 
 
-![png](output_76_1.png)
+![png](output_75_1.png)
 
 
 
-![png](output_76_2.png)
+![png](output_75_2.png)
 
 
 #### Writers
@@ -1783,15 +1722,15 @@ ax3 = bar_graph(data=df_writers_top, focus='writers', hue='ROI')
 ```
 
 
-![png](output_81_0.png)
+![png](output_80_0.png)
 
 
 
-![png](output_81_1.png)
+![png](output_80_1.png)
 
 
 
-![png](output_81_2.png)
+![png](output_80_2.png)
 
 
 ### Analyzing Genres
@@ -1842,15 +1781,15 @@ ax3 = bar_graph(data=df_genres_top, focus='genres', hue='ROI')
 ```
 
 
-![png](output_85_0.png)
+![png](output_84_0.png)
 
 
 
-![png](output_85_1.png)
+![png](output_84_1.png)
 
 
 
-![png](output_85_2.png)
+![png](output_84_2.png)
 
 
 ## What makes ratings higher?
@@ -1902,7 +1841,7 @@ ax.set(title='Ratings', ylabel='Average Domestic gross ($/movie)',
 ```
 
 
-![png](output_89_0.png)
+![png](output_88_0.png)
 
 
 
@@ -1937,7 +1876,7 @@ ax.set(title='Ratings', ylabel='rating (out of 10)',
 
 
 
-![png](output_90_1.png)
+![png](output_89_1.png)
 
 
 You can see that depending on the budget level the spread (standard deviation) are very different. So I will try to make violing plots to see spread of average ratings depending on their budget level. Also let's add in error bars with confidence interval of at least 95% to visually see whether these average ratings might be significantly different.
@@ -1998,7 +1937,7 @@ plt.close(fig2.fig)
 ```
 
 
-![png](output_94_0.png)
+![png](output_93_0.png)
 
 
 As you can see in the graphs above, higher the budget results in higher ratings significantly.
@@ -2207,7 +2146,7 @@ ax.set(title='Average Ratings for Writers with Top 20 Domestic Gross',
 
 
 
-![png](output_99_1.png)
+![png](output_98_1.png)
 
 
 ### Rating vs. top 20 directors in domestic gross
@@ -2420,7 +2359,7 @@ ax.set(title='Average ratings for directors with Top 20 Domestic Gross',
 
 
 
-![png](output_103_1.png)
+![png](output_102_1.png)
 
 
 # Four Actionable Suggestions
